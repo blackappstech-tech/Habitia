@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "./components/ui/sonner";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -14,7 +14,7 @@ import Terms from "./pages/Terms";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <main className="min-h-screen">
           <Routes>
@@ -28,7 +28,7 @@ function App() {
         </main>
         <Footer />
         <Toaster />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
