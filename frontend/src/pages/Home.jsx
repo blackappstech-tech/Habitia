@@ -97,22 +97,27 @@ export const Home = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background animation */}
         <HeroAnimation />
+
+        {/* Dark overlay to improve text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20"></div>
         
+        {/* Foreground text + CTA */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge variant="secondary" className="mb-6 bg-blue-100 text-blue-700 hover:bg-blue-200">
             🚀 Transform Your Life Today
           </Badge>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
             Build Better Habits,{' '}
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
               Build a Better You
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto drop-shadow">
             Track daily habits, stay motivated with streaks, and transform your life one day at a time
           </p>
           
@@ -124,7 +129,7 @@ export const Home = () => {
               </Link>
             </Button>
             
-            <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-50">
+            <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-50 text-white bg-white/10 backdrop-blur-sm">
               <Play className="w-5 h-5 mr-2" />
               Watch Demo
             </Button>
@@ -134,11 +139,11 @@ export const Home = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="flex items-center justify-center text-blue-600 mb-2">
+                <div className="flex items-center justify-center text-blue-400 mb-2">
                   {stat.icon}
                 </div>
-                <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.value}</div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
+                <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
+                <div className="text-sm text-gray-200">{stat.label}</div>
               </div>
             ))}
           </div>
