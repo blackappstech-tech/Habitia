@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Habitia/static/css/main.3684e093.css",
-    "main.js": "/Habitia/static/js/main.dc20e52b.js",
+    "main.css": "/Habitia/static/css/main.61f14dc5.css",
+    "main.js": "/Habitia/static/js/main.f022e678.js",
     "index.html": "/Habitia/index.html",
-    "main.3684e093.css.map": "/Habitia/static/css/main.3684e093.css.map",
-    "main.dc20e52b.js.map": "/Habitia/static/js/main.dc20e52b.js.map"
+    "main.61f14dc5.css.map": "/Habitia/static/css/main.61f14dc5.css.map",
+    "main.f022e678.js.map": "/Habitia/static/js/main.f022e678.js.map"
   },
   "entrypoints": [
-    "static/css/main.3684e093.css",
-    "static/js/main.dc20e52b.js"
+    "static/css/main.61f14dc5.css",
+    "static/js/main.f022e678.js"
   ]
 }
