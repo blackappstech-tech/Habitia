@@ -96,7 +96,7 @@ export const Home = () => {
 
   return (
     <div className="pt-16">
-     {/* Hero Section */}
+    {/* Hero Section */}
 <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
   {/* Background animation */}
   <HeroAnimation />
@@ -120,9 +120,9 @@ export const Home = () => {
       </span>
     </h1>
 
-    <p className="text-lg md:text-xl text-gray-800 mb-8 max-w-3xl mx-auto">
+    <p className="text-lg md:text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
       Track daily habits, stay motivated with streaks, and transform your life
-      one day at a time
+      one day at a time.
     </p>
 
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -148,21 +148,24 @@ export const Home = () => {
     </div>
 
     {/* Stats */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-      {stats.map((stat, index) => (
-        <div key={index} className="text-center">
-          <div className="flex items-center justify-center text-blue-600 mb-2">
-            {stat.icon}
+    {stats?.length > 0 && (
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+        {stats.map((stat, index) => (
+          <div key={index} className="text-center">
+            <div className="flex items-center justify-center text-blue-600 mb-2">
+              {stat.icon}
+            </div>
+            <div className="text-2xl md:text-3xl font-bold text-gray-900">
+              {stat.value}
+            </div>
+            <div className="text-sm text-gray-700">{stat.label}</div>
           </div>
-          <div className="text-2xl md:text-3xl font-bold text-gray-900">
-            {stat.value}
-          </div>
-          <div className="text-sm text-gray-700">{stat.label}</div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    )}
   </div>
 </section>
+
 
 
 
