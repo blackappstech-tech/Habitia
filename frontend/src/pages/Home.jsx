@@ -96,73 +96,65 @@ export const Home = () => {
 
   return (
     <div className="pt-16">
-    {/* Hero Section */}
-<section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-  {/* Background animation */}
+   {/* Hero Section */}
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
   <HeroAnimation />
 
-  {/* Glassy overlay over the whole hero */}
-  <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
+  {/* Glassy Layer */}
+  <div className="absolute inset-0 bg-white/20 backdrop-blur-md z-0"></div>
 
-  {/* Foreground text + CTA */}
-  <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center">
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <Badge
       variant="secondary"
-      className="mb-6 bg-blue-100/70 text-blue-700 hover:bg-blue-200/80"
+      className="mb-6 bg-blue-100/70 text-blue-700 hover:bg-blue-200/70 backdrop-blur-sm"
     >
       🚀 Transform Your Life Today
     </Badge>
 
     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
       Build Better Habits,{" "}
-      <span className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
+      <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
         Build a Better You
       </span>
     </h1>
 
-    <p className="text-lg md:text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
-      Track daily habits, stay motivated with streaks, and transform your life
-      one day at a time.
+    <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
+      Track daily habits, stay motivated with streaks, and transform your life one day at a time
     </p>
 
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <Button
         asChild
         size="lg"
-        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg shadow-lg"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-2xl shadow-lg"
       >
         <Link to="/download">
-          <Download className="w-5 h-5 mr-2" />
-          Download Habitia
+          <Download className="w-5 h-5 mr-2" /> Download Habitia
         </Link>
       </Button>
 
       <Button
         variant="outline"
         size="lg"
-        className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-100 text-gray-900 bg-white/50 backdrop-blur-sm"
+        className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-50 rounded-2xl backdrop-blur-sm"
       >
-        <Play className="w-5 h-5 mr-2" />
-        Watch Demo
+        <Play className="w-5 h-5 mr-2" /> Watch Demo
       </Button>
     </div>
 
     {/* Stats */}
-    {stats?.length > 0 && (
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-        {stats.map((stat, index) => (
-          <div key={index} className="text-center">
-            <div className="flex items-center justify-center text-blue-600 mb-2">
-              {stat.icon}
-            </div>
-            <div className="text-2xl md:text-3xl font-bold text-gray-900">
-              {stat.value}
-            </div>
-            <div className="text-sm text-gray-700">{stat.label}</div>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+      {stats.map((stat, index) => (
+        <div key={index} className="text-center bg-white/30 backdrop-blur-sm rounded-2xl p-4 shadow-sm">
+          <div className="flex items-center justify-center text-blue-600 mb-2">
+            {stat.icon}
           </div>
-        ))}
-      </div>
-    )}
+          <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.value}</div>
+          <div className="text-sm text-gray-700">{stat.label}</div>
+        </div>
+      ))}
+    </div>
   </div>
 </section>
 
