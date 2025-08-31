@@ -101,71 +101,65 @@ export const Home = () => {
   {/* Background animation */}
   <HeroAnimation />
 
-  {/* Glassmorphism container */}
-  <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-    <div className="relative z-10 max-w-5xl w-full text-center bg-white/40 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-10 md:p-14">
-      
-      {/* Badge */}
-      <Badge
-        variant="secondary"
-        className="mb-8 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 font-medium px-4 py-1.5 rounded-full shadow-sm"
+  {/* Glassy overlay over the whole hero */}
+  <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
+
+  {/* Foreground text + CTA */}
+  <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center">
+    <Badge
+      variant="secondary"
+      className="mb-6 bg-blue-100/70 text-blue-700 hover:bg-blue-200/80"
+    >
+      🚀 Transform Your Life Today
+    </Badge>
+
+    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
+      Build Better Habits,{" "}
+      <span className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
+        Build a Better You
+      </span>
+    </h1>
+
+    <p className="text-lg md:text-xl text-gray-800 mb-8 max-w-3xl mx-auto">
+      Track daily habits, stay motivated with streaks, and transform your life
+      one day at a time
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <Button
+        asChild
+        size="lg"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg shadow-lg"
       >
-        🚀 Transform Your Life Today
-      </Badge>
+        <Link to="/download">
+          <Download className="w-5 h-5 mr-2" />
+          Download Habitia
+        </Link>
+      </Button>
 
-      {/* Heading */}
-      <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-tight">
-        Build Better Habits,{" "}
-        <span className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
-          Build a Better You
-        </span>
-      </h1>
+      <Button
+        variant="outline"
+        size="lg"
+        className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-100 text-gray-900 bg-white/50 backdrop-blur-sm"
+      >
+        <Play className="w-5 h-5 mr-2" />
+        Watch Demo
+      </Button>
+    </div>
 
-      {/* Subheading */}
-      <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
-        Track your daily habits, stay motivated with streaks, and transform your life — one step at a time.
-      </p>
-
-      {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-        <Button
-          asChild
-          size="lg"
-          className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg rounded-xl shadow-lg"
-        >
-          <Link to="/download">
-            <Download className="w-5 h-5 mr-2" />
-            Download Habitia
-          </Link>
-        </Button>
-
-        <Button
-          variant="outline"
-          size="lg"
-          className="px-8 py-4 text-lg rounded-xl border-gray-300 hover:bg-white/70 hover:backdrop-blur-md text-gray-900 bg-white/40 backdrop-blur-sm transition"
-        >
-          <Play className="w-5 h-5 mr-2" />
-          Watch Demo
-        </Button>
-      </div>
-
-      {/* Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-        {stats.map((stat, index) => (
-          <div
-            key={index}
-            className="text-center transition transform hover:scale-105"
-          >
-            <div className="flex items-center justify-center text-blue-600 mb-3">
-              {stat.icon}
-            </div>
-            <div className="text-2xl md:text-3xl font-bold text-gray-900">
-              {stat.value}
-            </div>
-            <div className="text-sm text-gray-600">{stat.label}</div>
+    {/* Stats */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+      {stats.map((stat, index) => (
+        <div key={index} className="text-center">
+          <div className="flex items-center justify-center text-blue-600 mb-2">
+            {stat.icon}
           </div>
-        ))}
-      </div>
+          <div className="text-2xl md:text-3xl font-bold text-gray-900">
+            {stat.value}
+          </div>
+          <div className="text-sm text-gray-700">{stat.label}</div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
