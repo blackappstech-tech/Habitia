@@ -98,14 +98,17 @@ export const Home = () => {
     <div className="pt-16">
    {/* Hero Section */}
 <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100">
-  {/* Animation Layer */}
+  {/* Background animation */}
   <HeroAnimation />
 
-  {/* Glassy Content */}
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center backdrop-blur-md bg-white/20 rounded-2xl p-8 shadow-lg">
+  {/* Glassy overlay across the whole hero */}
+  <div className="absolute inset-0 bg-white/20 backdrop-blur-sm" />
+
+  {/* Foreground content */}
+  <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center">
     <Badge
       variant="secondary"
-      className="mb-6 bg-blue-100/80 text-blue-700 hover:bg-blue-200"
+      className="mb-6 bg-blue-100/80 text-blue-700 hover:bg-blue-200/90"
     >
       🚀 Transform Your Life Today
     </Badge>
@@ -118,7 +121,8 @@ export const Home = () => {
     </h1>
 
     <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
-      Track daily habits, stay motivated with streaks, and transform your life one day at a time
+      Track daily habits, stay motivated with streaks, and transform your life
+      one day at a time
     </p>
 
     {/* Buttons */}
@@ -126,7 +130,7 @@ export const Home = () => {
       <Button
         asChild
         size="lg"
-        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg shadow-md"
       >
         <Link to="/download">
           <Download className="w-5 h-5 mr-2" /> Download Habitia
@@ -135,7 +139,7 @@ export const Home = () => {
       <Button
         variant="outline"
         size="lg"
-        className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-50"
+        className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-100 bg-white/50 backdrop-blur-sm text-gray-900"
       >
         <Play className="w-5 h-5 mr-2" /> Watch Demo
       </Button>
