@@ -97,58 +97,62 @@ export const Home = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background animation */}
-        <HeroAnimation />
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  {/* Background animation */}
+  <HeroAnimation />
 
-        {/* Dark overlay to improve text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20"></div>
-        
-        {/* Foreground text + CTA */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="secondary" className="mb-6 bg-blue-100 text-blue-700 hover:bg-blue-200">
-            🚀 Transform Your Life Today
-          </Badge>
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg mb-6">
-            Build Better Habits,{' '}
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              Build a Better You
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto drop-shadow">
-            Track daily habits, stay motivated with streaks, and transform your life one day at a time
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
-              <Link to="/download">
-                <Download className="w-5 h-5 mr-2" />
-                Download Habitia
-              </Link>
-            </Button>
-            
-            <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-50 text-white bg-white/10 backdrop-blur-sm">
-              <Play className="w-5 h-5 mr-2" />
-              Watch Demo
-            </Button>
-          </div>
+  {/* Foreground text + CTA with frosted-glass box */}
+  <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div className="relative z-10 max-w-4xl text-center bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-8">
+      <Badge variant="secondary" className="mb-6 bg-blue-100 text-blue-700 hover:bg-blue-200">
+        🚀 Transform Your Life Today
+      </Badge>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="flex items-center justify-center text-blue-400 mb-2">
-                  {stat.icon}
-                </div>
-                <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
-                <div className="text-sm text-gray-200">{stat.label}</div>
-              </div>
-            ))}
+      <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
+        Build Better Habits,{' '}
+        <span className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
+          Build a Better You
+        </span>
+      </h1>
+
+      <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+        Track daily habits, stay motivated with streaks, and transform your life one day at a time
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
+          <Link to="/download">
+            <Download className="w-5 h-5 mr-2" />
+            Download Habitia
+          </Link>
+        </Button>
+
+        <Button
+          variant="outline"
+          size="lg"
+          className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-100 text-gray-900 bg-white/70 backdrop-blur-sm"
+        >
+          <Play className="w-5 h-5 mr-2" />
+          Watch Demo
+        </Button>
+      </div>
+
+      {/* Stats */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+        {stats.map((stat, index) => (
+          <div key={index} className="text-center">
+            <div className="flex items-center justify-center text-blue-600 mb-2">
+              {stat.icon}
+            </div>
+            <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.value}</div>
+            <div className="text-sm text-gray-600">{stat.label}</div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Features Section */}
       <section className="py-20 bg-white">
