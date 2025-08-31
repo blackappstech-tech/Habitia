@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://blackappstech-tech.github.io/",
+  "homepage": "https://blackappstech-tech.github.io/Habitia",
   "dependencies": {
     "ajv": "6.12.6",
     "ajv-keywords": "3.5.2",
@@ -61,7 +61,9 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
