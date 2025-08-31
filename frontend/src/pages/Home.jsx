@@ -97,18 +97,21 @@ export const Home = () => {
   return (
     <div className="pt-16">
    {/* Hero Section */}
-<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100">
+  {/* Animation Layer */}
   <HeroAnimation />
 
   {/* Glassy Content */}
-  <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 text-center 
-                  bg-white/10 backdrop-blur-md rounded-2xl p-10 shadow-lg">
-    <Badge variant="secondary" className="mb-6 bg-blue-100/60 text-blue-700 hover:bg-blue-200/70">
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center backdrop-blur-md bg-white/20 rounded-2xl p-8 shadow-lg">
+    <Badge
+      variant="secondary"
+      className="mb-6 bg-blue-100/80 text-blue-700 hover:bg-blue-200"
+    >
       🚀 Transform Your Life Today
     </Badge>
 
     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-      Build Better Habits,{' '}
+      Build Better Habits,{" "}
       <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
         Build a Better You
       </span>
@@ -118,13 +121,22 @@ export const Home = () => {
       Track daily habits, stay motivated with streaks, and transform your life one day at a time
     </p>
 
+    {/* Buttons */}
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
+      <Button
+        asChild
+        size="lg"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
+      >
         <Link to="/download">
           <Download className="w-5 h-5 mr-2" /> Download Habitia
         </Link>
       </Button>
-      <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-100">
+      <Button
+        variant="outline"
+        size="lg"
+        className="px-8 py-4 text-lg border-gray-300 hover:bg-gray-50"
+      >
         <Play className="w-5 h-5 mr-2" /> Watch Demo
       </Button>
     </div>
@@ -136,7 +148,9 @@ export const Home = () => {
           <div className="flex items-center justify-center text-blue-600 mb-2">
             {stat.icon}
           </div>
-          <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.value}</div>
+          <div className="text-2xl md:text-3xl font-bold text-gray-900">
+            {stat.value}
+          </div>
           <div className="text-sm text-gray-600">{stat.label}</div>
         </div>
       ))}
